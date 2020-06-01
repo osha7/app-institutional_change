@@ -1,25 +1,32 @@
 
 class PledgesController < ApplicationController
 
-    get '/pledge/1' do
+    get '/pledges/1' do
         erb :'/pledges/pledge_1'
     end
 
-    post '/pledge/1' do
+    post '/pledges/1' do
     end
 
-    get '/pledge/2' do
+    get '/pledges/2' do
         erb :'/pledges/pledge_2'
     end
 
-    post '/pledge/2' do
+    post '/pledges/2' do
     end
 
-    get '/pledge/3' do
+    get '/pledges/3' do
         erb :'/pledges/pledge_3'
     end
 
-    post '/pledge/3' do
+    post '/pledges/3' do
+    end
+
+    get '/pledges/4' do
+        erb :'/pledges/pledge_4'
+    end
+
+    post '/pledges/4' do
     end
 
 
