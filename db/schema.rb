@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200529180354) do
+ActiveRecord::Schema.define(version: 20200601001232) do
 
   create_table "pledges", force: :cascade do |t|
     t.string  "title"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20200529180354) do
     t.string "email"
     t.string "password_digest"
     t.string "phone_number"
-    t.string "zip"
+    t.string "zip_code"
     t.string "ethnicity"
     t.string "political_party"
   end

@@ -8,6 +8,5 @@ end
 
 use Rack::MethodOverride
 use PledgesController
-use SessionsController
 use UsersController
 run ApplicationController
