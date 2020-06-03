@@ -11,12 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200601001232) do
+ActiveRecord::Schema.define(version: 20200603141811) do
 
   create_table "pledges", force: :cascade do |t|
     t.string  "title"
     t.string  "content"
     t.integer "user_id"
+    t.string  "checkbox1"
+    t.string  "checkbox2"
+    t.string  "checkbox3"
+    t.string  "checkbox4"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
   end
 
   create_table "users", force: :cascade do |t|

@@ -24,7 +24,15 @@
       <center><h5 class="card-title">Take Action</h5></center>
       <p class="card-text">With supporting text below as a natural lead-in to additional content.
       </p>
-      <a href="#" class="btn btn-primary">Sign Pledge #4</a>
+
+      <div class="form-group form-check">
+          <form action='/pledges/4' method="POST">
+            <input type="checkbox" class="form-check-input" id="checkbox4" name="checkbox4" value="true">
+            <label class="form-check-label" for="checkbox4">By checking this box, you agree to electronically sign this pledge.</label>
+            <center><button type="submit" class="btn btn-primary">Sign Pledge #4</a></center></button>
+          </form>
+        </div>
+
     </div>
 </div>
 

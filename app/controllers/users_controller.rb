@@ -6,7 +6,16 @@ class UsersController < ApplicationController
         erb :"users/signup"
     end
 
-    # signup post
+    # post '/users' do          
+    #   @user = User.create(params)
+    #     if params[:email] == "" || params[:password] == "" || params[:first_name] == "" || params[:last_initial] == "" || params[:zip_code == ""
+    #         redirect to '/failure'
+    #     else 
+    #         @user
+    #         session[:user_id] = @user.id
+    #         redirect to '/login'
+    #     end
+    # end
     post '/users' do
         @user = User.create(params)
         if @user
@@ -16,6 +25,7 @@ class UsersController < ApplicationController
             erb :"/users/signup"
         end
     end
+
 
     get '/login' do
         erb :"/users/login"

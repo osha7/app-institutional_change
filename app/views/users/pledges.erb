@@ -1,0 +1,30 @@
+
+
+<h1>Pledge Page:</h1>
+
+<br>
+
+<!-- What I got from pry:  !!params[:checkbox1] => true -->
+<!-- Also:  params => {"checkbox1" => "true"} -->
+<!-- Also:  !!params => true -->
+<!-- Also:  !!"checkbox1" => true -->
+
+
+<% check1 = !!params[:checkbox1] %>
+
+<% if "check1" == true %>
+<%= "You have signed Pledge 1" %>
+<% else %>
+<%= "You have not signed any pledges." %>
+
+<%end%>
+
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+
+    

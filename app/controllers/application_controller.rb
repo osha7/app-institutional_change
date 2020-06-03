@@ -19,7 +19,6 @@ class ApplicationController < Sinatra::Base
 
     def current_user
       @current_user ||= User.find_by(id: session[:user_id])
-  
       # ^^ instance variable [if it has a value, then leave it]
       # or [||]
       # or go find user by id in session

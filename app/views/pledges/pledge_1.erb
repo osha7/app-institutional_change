@@ -2,44 +2,45 @@
 
 <div class="container">
 
-<head>
+  <head>
 
-</head>
+  </head>
 
-<body style="background-color: #fff;">
+  <body style="background-color: #fff;">
 
-<div class="card">
-  <style>
-    article {
-      padding-top: 10px;
-    }
-  </style>
+  <div class="card">
+    <style>
+      article {
+        padding-top: 10px;
+      }
+    </style>
 
-  <div class="card-header" style="background-color: #501B1D; color: #fff;">
-    <p>
-      <center><h3><strong>Pledge #1 </strong></h3></center>
-    </p>
-  </div>
-    <div class="card-body">
-      <center><h5 class="card-title">Acknowledging Institutional Racism</h5></center>
-      <p class="card-text">Racial and ethnic inequalities loom large in American society. People of color face structural barriers when it comes to securing quality housing, healthcare, employment, and education. Racial disparities also permeate the criminal justice system in the United States and undermine its effectiveness.
+    <div class="card-header" style="background-color: #501B1D; color: #fff;">
+      <p>
+        <center><h3><strong>Pledge #1 </strong></h3></center>
       </p>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">By checking this box, you agree to electronically sign this pledge.</label>
+    </div>
+      <div class="card-body">
+        <center><h5 class="card-title">Acknowledging Institutional Racism</h5></center>
+        <p class="card-text">Racial and ethnic inequalities loom large in American society. People of color face structural barriers when it comes to securing quality housing, healthcare, employment, and education. Racial disparities also permeate the criminal justice system in the United States and undermine its effectiveness.
+        </p>
+
+        <div class="form-group form-check">
+          <form action='/pledges/1' method="POST">
+            <input type="checkbox" class="form-check-input" id="checkbox1" name="checkbox1" value="true">
+            <label class="form-check-label" for="checkbox1">By checking this box, you agree to electronically sign this pledge.</label>
+            <center><button type="submit" class="btn btn-primary">Sign Pledge #1</a></center></button>
+          </form>
+        </div>
+      
+      </div>
   </div>
 
-      <a href="#" class="btn btn-primary">Sign Pledge #1</a>
-    </div>
-</div>
-
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-
-
+  <br></br>
+  <br></br>
+  <br></br>
+  <br></br>
+  <br></br>
 
   </body>
 
