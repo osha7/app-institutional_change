@@ -16,6 +16,7 @@ class UsersController < ApplicationController
             redirect to '/login'
         end
     end
+
     # post '/users' do
     #     @user = User.create(params)
     #     if @user
@@ -25,6 +26,10 @@ class UsersController < ApplicationController
     #         erb :"/users/signup"
     #     end
     # end
+
+    get '/failure' do
+        erb :"/users/failure"
+    end
 
 
     get '/login' do
