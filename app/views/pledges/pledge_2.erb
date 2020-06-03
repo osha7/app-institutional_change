@@ -25,6 +25,12 @@
       <p class="card-text">With supporting text below as a natural lead-in to additional content.
       </p>
 
+      <% if current_user.pledges.find_by(checkbox2: "true") %>
+        <div>
+          <center><a href="/users/home" class="btn btn-primary">Home</a></center></button>
+        </div>
+
+      <% else %>
         <div class="form-group form-check">
           <form action='/pledges/2' method="POST">
             <input type="checkbox" class="form-check-input" id="checkbox2" name="checkbox2" value="true">
@@ -32,7 +38,7 @@
             <center><button type="submit" class="btn btn-primary">Sign Pledge #2</a></center></button>
           </form>
         </div>
-        
+        <% end %>
     </div>
 </div>
 
@@ -46,5 +52,9 @@
 
   </body>
 
+  <br></br>
+  <div>
+    <center> <a href="/logout" class="btn btn-primary">Log Out</a></center>
+  </div>
 
 </div>

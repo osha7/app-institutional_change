@@ -25,6 +25,12 @@
         <p class="card-text">Racial and ethnic inequalities loom large in American society. People of color face structural barriers when it comes to securing quality housing, healthcare, employment, and education. Racial disparities also permeate the criminal justice system in the United States and undermine its effectiveness.
         </p>
 
+        <% if current_user.pledges.find_by(checkbox1: "true") %>
+            <div>
+              <center><a href="/users/home" class="btn btn-primary">Home</a></center></button>
+            </div>
+
+        <% else %>
         <div class="form-group form-check">
           <form action='/pledges/1' method="POST">
             <input type="checkbox" class="form-check-input" id="checkbox1" name="checkbox1" value="true">
@@ -32,9 +38,11 @@
             <center><button type="submit" class="btn btn-primary">Sign Pledge #1</a></center></button>
           </form>
         </div>
-      
+       <% end %>
       </div>
   </div>
+
+  
 
   <br></br>
   <br></br>
@@ -43,6 +51,9 @@
   <br></br>
 
   </body>
-
+  <br></br>
+            <div>
+              <center> <a href="/logout" class="btn btn-primary">Log Out</a></center>
+            </div>
 
 </div>

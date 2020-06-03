@@ -8,5 +8,9 @@ class PostsController < ApplicationController
         erb :'/posts/index'
     end
 
+    #show
+    get '/posts/:id' do  #:id ==> is the 'slug/wildcard'
+    end
+
 
 end
