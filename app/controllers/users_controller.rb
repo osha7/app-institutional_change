@@ -3,9 +3,10 @@ class UsersController < ApplicationController
 
     get '/signup' do
        
-        erb :"users/signup"
+        erb :"/users/signup"
     end
 
+    # this is post '/signup'
     post '/users' do          
       @user = User.create(params)
         if params[:email] == "" || params[:password] == "" || params[:first_name] == "" || params[:last_initial] == "" || params[:zip_code] == ""
@@ -17,16 +18,6 @@ class UsersController < ApplicationController
         end
     end
 
-    # post '/users' do
-    #     @user = User.create(params)
-    #     if @user
-    #         session[:user_id] = @user.id
-    #         redirect to '/login'
-    #     else
-    #         erb :"/users/signup"
-    #     end
-    # end
-
     get '/failure' do
         erb :"/users/failure"
     end
@@ -36,7 +27,7 @@ class UsersController < ApplicationController
         erb :"/users/login"
     end  
 
-    # login post
+    # this is post '/login'
     post '/sessions' do
         @user = User.find_by(email: params[:email])
     # binding.pry

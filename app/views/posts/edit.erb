@@ -1,0 +1,23 @@
+<br></br>
+<div class="container">
+
+<h1>Edit A Post</h1>
+
+<form action="/posts" method="POST">
+
+    <label for="name">Title:</label>
+    <input size= "50" type="text" name="post[name]" value=<%= @post.name %>>
+<br></br>
+    <label for="content">Content:</label>
+    <input size= "50" type="text" name="post[content]" value=<%= @post.content %>>
+<br></br>
+    <button type="submit" class="btn btn-primary">Update Post</button>
+
+</form>
+
+</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
