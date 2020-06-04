@@ -7,7 +7,8 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 
-use Rack::MethodOverride
+use Rack::MethodOverride 
+        # ^^ Middleware for put/patch/delete requests (looking for key of "_method" and then follows the direct of the value)
 use PostsController
 use PledgesController
 use UsersController

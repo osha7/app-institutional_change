@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     get '/posts' do
         #put all the posts here
         @posts = Post.all
+
         erb :'/posts/index'
     end
 
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
     post '/posts' do
         # post = Post.create(name: params[:name], content: params[:content])
         post = Post.create(params[:post])  #see posts/new.erb for nested params
+
         redirect to "/posts/#{post.id}"
     end
 
@@ -30,11 +32,30 @@ class PostsController < ApplicationController
         erb :'/posts/show'
     end
 
-    # update (read)
+    # edit (read)
     get '/posts/:id/edit' do
         id = params[:id]
-        @post = Post.find_by(id: id)
+        @post = Post.find_by(id: id)  #ln 37/38 condense see below - either acceptable
+
         erb :'/posts/edit'
+    end
+
+    # update (update)
+    # put changes all overwrites entire body/ patch only make the specified change requested
+    # must use middleware (Rack::MethodOverride) to send put/patch/delete requests - HTML only recognizes get and post
+    put '/posts/:id' do
+        post = Post.find_by(id: params[:id])
+        post.update(params[:post])
+
+        redirect to "posts/#{post.id}"
+    end
+
+    # destroy (destroy)
+    delete '/posts/:id' do
+        post = Post.find_by(id: params[:id])
+        post.destroy
+
+        redirect to "/posts"
     end
 
 end
