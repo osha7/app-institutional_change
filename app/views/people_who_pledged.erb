@@ -1,0 +1,30 @@
+
+<br></br>
+<div class="container">
+
+    <center>
+        <h1>People Pledging Change:</h1>
+
+            <% a = User.all %>
+        <h1>-<%= a.length %>-</h1>
+        <h2>Commitments & Counting</h2>
+    </center>
+
+    <br></br>
+
+    <ul>
+        <% @sorted_array = @users.all.sort_by {|user| user.zip_code} %>
+        <% @sorted_array.each do |user| %>
+            
+            <li> <%= user.first_name %> <%= user.last_initial %>., <%= user.zip_code%></li>
+        
+        <% end %>
+    </ul>
+    
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
+</div>

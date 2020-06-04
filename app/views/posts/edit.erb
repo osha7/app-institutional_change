@@ -9,10 +9,10 @@
     <input type="hidden" name="_method" value="put">
 
     <label for="name">Title:</label><br>
-    <input size= "50" type="text" name="post[name]" value=<%= @post.name %>>
+    <input size= "33" type="text" name="post[name]" value="<%= @post.name %>">
 <br></br>
     <label for="content">Content:</label><br>
-    <input size= "50" type="text" name="post[content]" value=<%= @post.content %>>
+    <textarea type="text" name="post[content]" rows="5" cols="33"><%= @post.content %></textarea>
 <br></br>
     <button type="submit" class="btn btn-primary">Update Post</button>
 
@@ -27,6 +27,11 @@
     <button type="submit" class="btn btn-primary">Delete Post</button>
 
 </form>
+
+<br>
+
+<a href="/posts" class="btn btn-primary">Return To All Posts</a>
+
 
 </div>
 <br></br>

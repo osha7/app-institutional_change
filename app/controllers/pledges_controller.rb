@@ -52,5 +52,11 @@ class PledgesController < ApplicationController
         @pledge.save
         redirect to :'/pledges/4'
     end
+
+    get '/people_who_pledged' do
+        @users = User.all 
+        
+        erb :'/people_who_pledged'
+    end
     
 end
