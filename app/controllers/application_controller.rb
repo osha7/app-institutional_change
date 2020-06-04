@@ -11,9 +11,25 @@ class ApplicationController < Sinatra::Base
 
   get "/" do
     @user = current_user
+
     erb :welcome
   end
   
+  get '/commitment_in_community' do
+    @users = User.all 
+
+    erb :'/commitment_in_community'
+  end
+
+  get '/resources' do
+
+    erb :'/resources'
+  end
+
+  get '/editors_quarterly' do
+
+    erb :'/editors_quarterly'
+  end
 
   helpers do
 
