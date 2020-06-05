@@ -7,27 +7,26 @@
 <br></br>
 <br></br>
 
-    <ul>
 
-        <% user_ten = Post.find_by(user_id: 10) %>
-        <li><%= user_ten.name %></li>
-        <li><%= user_ten.content %></li>
+
+    <ul>
+       
+    <% Post.all.reverse.select do |post| %>
+        <%  if post.user_id == 21 %>
+  
+        <h2><%= post.name %></h2>
+        <h6><%= post.created_at %></h6><br>
+        <%= post.content %>
+        <br></br>
+
+        <% end %>
+    <% end %>
+
+        
         
     </ul>
 
-    <ul>
-    
-        <% user_twentyone = Post.find_by(user_id: 21) %>
-        <li><%= user_twentyone.name %></li>
-        <li><%= user_twentyone.content %></li>
-        
-    </ul>
 
-<div>
-   
-    <center> <a href="/logout" class="btn btn-primary">Log Out</a></center>
-
-</div>
     
     <br></br>
     <br></br>
