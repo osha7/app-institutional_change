@@ -4,11 +4,11 @@
         background-image: url(/images/together.jpg);
         background-size: cover;
         height: 100%;
-        color: #fff;}
+        color: #fff;
+    }
     
     #body {
         background-color: grey;
     }
     
-    
-    }
+}

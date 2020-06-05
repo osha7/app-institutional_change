@@ -49,7 +49,7 @@ class UsersController < ApplicationController
         @user = current_user
         # binding.pry
         if !logged_in?
-        redirect to 'users/login'
+        redirect to '/login'
         else
         erb :'/users/home' 
         end

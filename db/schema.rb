@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200603141811) do
+ActiveRecord::Schema.define(version: 20200604202012) do
 
   create_table "pledges", force: :cascade do |t|
     t.string  "title"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20200603141811) do
     t.string   "content"
     t.integer  "user_id"
     t.datetime "created_at"
+    t.string   "author"
   end
 
   create_table "users", force: :cascade do |t|

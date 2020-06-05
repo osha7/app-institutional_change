@@ -12,16 +12,23 @@ class PostsController < ApplicationController
     # new (read)
     # more specific so needs to be listed above show
     get '/posts/new' do
-
-        erb :'/posts/new'
+        if !logged_in?
+            redirect to '/login'
+        else
+            erb :'/posts/new'
+        end
     end
 
     # create (create)
     post '/posts' do
         # post = Post.create(name: params[:name], content: params[:content])
-        post = Post.create(params[:post])  #see posts/new.erb for nested params
-
-        redirect to "/posts/#{post.id}"
+        @post = Post.create(  #see posts/new.erb for nested params
+        user_id: session[:user_id],
+        name: params[:name],
+        content: params[:content]
+        )
+     
+        redirect to "/posts/#{@post.id}"
     end
 
     # show (read)

@@ -8,9 +8,22 @@
 <li>Content: <%= @post.content %></li>
 </ul>
 
+<% if @post.user_id == current_user.id %>
 <a href=<%= "/posts/#{@post.id}/edit" %> class="btn btn-primary">Edit Post <%= @post.id %></a>
+<%end%>
+
 <br></br>
+
 <a href="/posts" class="btn btn-primary">Return To All Posts</a>
+
+
+
+<br></br>
+<br></br>
+
+<div>
+
+    <center> <a href="/logout" class="btn btn-primary">Log Out</a></center>
 
 </div>
 
@@ -19,3 +32,5 @@
 <br></br>
 <br></br>
 <br></br>
+
+</div>
