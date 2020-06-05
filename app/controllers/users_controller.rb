@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
     # binding.pry
-      redirect to "/users/home"
+      redirect to "/users/dashboard"
     else
       redirect to "/users/login"
     end
@@ -45,13 +45,13 @@ class UsersController < ApplicationController
         redirect to '/'
     end
 
-    get '/users/home' do
+    get '/users/dashboard' do
         @user = current_user
         # binding.pry
         if !logged_in?
         redirect to '/login'
         else
-        erb :'/users/home' 
+        erb :'/users/dashboard' 
         end
     end
 
