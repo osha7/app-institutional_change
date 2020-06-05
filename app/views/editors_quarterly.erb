@@ -2,10 +2,26 @@
 <br></br>
 <div class="container">
 
-    <h1>Editor's Quarterly Newsletter:</h1>
+    <h1>Editor&#39;s Quarterly Newsletter:</h1>
 
-    <br></br>
-    <br></br>
+<br></br>
+<br></br>
+
+    <ul>
+
+        <% user_ten = Post.find_by(user_id: 10) %>
+        <li><%= user_ten.name %></li>
+        <li><%= user_ten.content %></li>
+        
+    </ul>
+
+    <ul>
+    
+        <% user_twentyone = Post.find_by(user_id: 21) %>
+        <li><%= user_twentyone.name %></li>
+        <li><%= user_twentyone.content %></li>
+        
+    </ul>
 
 <div>
    
@@ -20,3 +36,5 @@
     <br></br>
 
 </div>
+
+
