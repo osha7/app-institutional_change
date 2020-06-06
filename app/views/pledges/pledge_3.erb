@@ -8,55 +8,54 @@
 
 <body style="background-color: #fff;">
 
-<div class="card">
-  <style>
-    article {
-      padding-top: 10px;
-    }
-  </style>
+  <div class="card">
+    <style>
+      article {
+        padding-top: 10px;
+      }
+    </style>
 
-  <div class="card-header" style="background-color: #FF652F; color: #fff;">
-    <p>
-      <center><h3><strong>Pledge #3 </strong></h3></center>
-    </p>
-  </div>
-    <div class="card-body">
-      <center><h5 class="card-title">Starting A Conversation</h5></center>
-      <p class="card-text">I pledge to start a conversation with a loved one about institutional racism and discrimination. Speak to a family member, friend, teacher, neighbor, etc.
+    <div class="card-header" style="background-color: #FF652F; color: #fff;">
+      <p>
+        <center><h3><strong>Pledge #3 </strong></h3></center>
       </p>
-      <p>We suggest you ask to have a conversation before diving into the deep end with someone who might not be as prepared to discuss these sensitive issues.  Ask, make time, listen, and keep an open mind.
-      </p>
-      <p>Note:  If the person is not ready to have a conversation, do not force the conversation.  Move on to the next possible conversation.</p>
-      <p>Repeat this step again and again with as many community members as possible.</p>
-      
-      <% if current_user.pledges.find_by(checkbox3: "true") %>
-        <div>
-          <center><a href="/users/dashboard" class="btn btn-primary">Dashboard</a></center></button>
-        </div>
-
-      <% else %>
-        <div class="form-group form-check">
-          <form action='/pledges/3' method="POST">
-            <input type="checkbox" class="form-check-input" id="checkbox3" name="checkbox3" value="true">
-            <label class="form-check-label" for="checkbox3">By checking this box, you agree to electronically sign this pledge.</label>
-            <center><button type="submit" class="btn btn-primary">Sign Pledge #3</a></center></button>
-          </form>
-        </div>
-        <% end %>
     </div>
-</div>
+      <div class="card-body">
+        <center><h5 class="card-title">Starting A Conversation</h5></center>
+        <p class="card-text">I pledge to start a conversation with a loved one about institutional racism and discrimination. Speak to a family member, friend, teacher, neighbor, etc.
+        </p>
+        <p>We suggest you ask to have a conversation before diving into the deep end with someone who might not be as prepared to discuss these sensitive issues.  Ask, make time, listen, and keep an open mind.
+        </p>
+        <p>Note:  If the person is not ready to have a conversation, do not force the conversation.  Move on to the next possible conversation.</p>
+        <p>Repeat this step again and again with as many community members as possible.</p>
+        <br>
+        
+        <% if current_user.pledges.find_by(checkbox3: "true") %>
+          <div>
+            <center><a href="/users/dashboard" class="btn btn-primary">Dashboard</a></center></button>
+          </div>
 
+        <% else %>
+          <div class="form-group form-check">
+            <form action='/pledges/3' method="POST">
+              <input type="checkbox" class="form-check-input" id="checkbox3" name="checkbox3" value="true">
+              <label class="form-check-label" for="checkbox3">By checking this box, you agree to electronically sign this pledge.</label>
+              <center><button type="submit" class="btn btn-primary">Sign Pledge #3</a></center></button>
+            </form>
+          </div>
+          <% end %>
+      </div>
+  </div>
+
+</body>
 
 <br></br>
 <br></br>
 <br></br>
-<br></br>
-<br></br>
 
 
-  </body>
+  
 
-  <br></br>
   <div>
     <center> <a href="/logout" class="btn btn-primary">Log Out</a></center>
   </div>
