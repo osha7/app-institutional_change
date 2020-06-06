@@ -25,8 +25,8 @@
   <div class="col-sm-6">
     <div class="card" style="background-color: #501B1D; color: #fff;">
       <div class="card-body">
-        <h5 class="card-title">Insitutional Racism</h5>
-        <p class="card-text">We have to acknowledge that structural racism exists.</p>
+        <h5 class="card-title">Stand Against Racism</h5>
+        <p class="card-text">We acknowledge institutional racism and discrimination exist.</p>
         
         <% if current_user.pledges.find_by(checkbox1: 'true') %>
           <a href="/pledges/1" class="btn btn-primary">View Signed Pledge #1</a>
@@ -41,8 +41,8 @@
   <div class="col-sm-6">
     <div class="card" style="background-color: #BC4639; color: #fff;">
       <div class="card-body">
-        <h5 class="card-title">Stand Against Racism</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Educate Myself</h5>
+        <p class="card-text">We believe in equality for all and we know change starts with us.</p>
 
         <% if current_user.pledges.find_by(checkbox2: 'true') %>
           <a href="/pledges/2" class="btn btn-primary">View Signed Pledge #2</a>
@@ -60,8 +60,8 @@
   <div class="col-sm-6">
     <div class="card" style="background-color: #FF652F; color: #fff;">
       <div class="card-body">
-        <h5 class="card-title">Educate Others</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Starting A Conversation</h5>
+        <p class="card-text">We are willing to talk with those around us about systemic racism.</p>
         
         <% if current_user.pledges.find_by(checkbox3: 'true') %>
           <a href="/pledges/3" class="btn btn-primary">View Signed Pledge #3</a>
@@ -75,8 +75,8 @@
   <div class="col-sm-6">
     <div class="card" style="background-color: #FC4445; color: #fff;">
       <div class="card-body">
-        <h5 class="card-title">Take Action</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Taking Action</h5>
+        <p class="card-text">Let our voices be heard from our homes to social media to the ballot box.</p>
         
         <% if current_user.pledges.find_by(checkbox4: 'true') %>
           <a href="/pledges/4" class="btn btn-primary">View Signed Pledge #4</a>
