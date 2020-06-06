@@ -12,7 +12,7 @@
     <ul>
        
     <% Post.all.reverse.select do |post| %>
-        <%  if post.user_id == 21 %>
+        <% if post.user_id == 21 %>
   
         <h2><%= post.name %></h2>
         <h6><%= post.created_at %></h6><br>

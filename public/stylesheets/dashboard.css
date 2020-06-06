@@ -4,7 +4,8 @@
 .jumbotron {
     background-image: url(/images/strength.jpg);
     background-size: cover;
-    height: 100%;
+    background-position: 0 20%;
+    height: 200%;
     color: #BC4639;}
 
 #body {

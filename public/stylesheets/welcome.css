@@ -3,12 +3,9 @@
     .jumbotron {
         background-image: url(/images/together.jpg);
         background-size: cover;
-        height: 100%;
+        background-position: 0 35%;
+        height: 200%;
         color: #fff;
-    }
-    
-    #body {
-        background-color: grey;
     }
     
 }

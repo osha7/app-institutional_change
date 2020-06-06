@@ -1,0 +1,11 @@
+@media screen {
+    
+        .jumbotron {
+            background-image: url(/images/love.jpg);
+            background-size: cover;
+            background-position: 0 50%;
+            height: 100%;
+            color: #501B1D;
+        }
+        
+    }
