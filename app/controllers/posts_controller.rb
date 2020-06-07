@@ -27,6 +27,7 @@ class PostsController < ApplicationController
         name: params[:name],
         content: params[:content]
         )
+        #binding.pry
      
         redirect to "/posts/#{@post.id}"
     end

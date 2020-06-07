@@ -26,9 +26,13 @@
         <div>
             <br>
                 <ul>
-                    <% @posts.each do |post| %>
-                        <li><a href="<%= "/posts/#{post.id}" %>"><%= post.name %></a></li>
+                    <% @posts.each.reverse_each do |post| %>
+                        <% c = post.created_at %>
+                        <li><%= c.strftime("%B%e, %Y") %>
+                       <a href="<%= "/posts/#{post.id}" %>"><%= post.name %></a></li>
                     <% end %>
+
+    
                 </ul>
         </div>
 
