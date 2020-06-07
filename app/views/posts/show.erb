@@ -4,10 +4,10 @@
     <h1 style="color:#501B1D;"><b>Post <%= @post.id %></b></h1>
 
         <ul>
-            <h5>Title:</h5>
-                <li><%= @post.name %></li><br>
-            <h5>Content:</h5>
-                <li><%= @post.content %></li>
+            <li><h5>Title:</h5>
+                <%= @post.name %></li><br>
+            <li><h5>Content:</h5>
+                <%= @post.content %></li>
         </ul>
 
         <% if @post.user_id == current_user.id %>

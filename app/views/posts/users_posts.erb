@@ -2,18 +2,18 @@
 <br></br>
 <div class="container">
 
-    <h1 style="color:#501B1D;"><b>Editor&#39;s Quarterly Newsletter</b></h1>
+    <h1 style="color:#501B1D;"><b>Your Posts</b></h1>
 
 <br>
 
     <ul>
        
     <% Post.all.reverse.select do |post| %>
-        <% if post.user_id == 21 %>
+        <% if post.user_id == current_user.id %>
   
-        <li><h2><%= post.name %></h2></li>
+        <li><h4><a href="<%= "/posts/#{post.id}" %>"><%= post.name %></a></h4></li>
         <h6> <% c = post.created_at %>
-            <%= c.strftime("%B%e, %Y") %></h6><br>
+            <%= c.strftime("%B%e, %Y") %></h6>
         <%= post.content %>
         <br></br>
 
@@ -32,5 +32,4 @@
  
 
 </div>
-
 

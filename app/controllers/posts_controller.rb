@@ -9,6 +9,11 @@ class PostsController < ApplicationController
         erb :'/posts/index'
     end
 
+    get '/posts/your_posts' do
+
+        erb :'/posts/users_posts'
+    end
+
     # new (read)
     # more specific so needs to be listed above show
     get '/posts/new' do
