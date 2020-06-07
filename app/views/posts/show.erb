@@ -1,20 +1,22 @@
 <br></br>
 <div class="container">
 
-<h1>Post <%= @post.id %>:</h1>
+    <h1 style="color:#501B1D;"><b>Post <%= @post.id %></b></h1>
 
-<ul>
-<li>Title: <%= @post.name %></li>
-<li>Content: <%= @post.content %></li>
-</ul>
+        <ul>
+            <h5>Title:</h5>
+                <li><%= @post.name %></li><br>
+            <h5>Content:</h5>
+                <li><%= @post.content %></li>
+        </ul>
 
-<% if @post.user_id == current_user.id %>
-<a href=<%= "/posts/#{@post.id}/edit" %> class="btn btn-primary">Edit Post <%= @post.id %></a>
-<%end%>
+        <% if @post.user_id == current_user.id %>
+            <a href=<%= "/posts/#{@post.id}/edit" %> class="btn btn-primary">Edit Post <%= @post.id %></a>
+        <%end%>
 
-<br></br>
+        <br></br>
 
-<a href="/posts" class="btn btn-primary">Return To All Posts</a>
+        <a href="/posts" class="btn btn-primary">Return To All Posts</a>
 
 
 

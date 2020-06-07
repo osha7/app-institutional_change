@@ -1,0 +1,11 @@
+@media screen {
+    
+    .jumbotron {
+        background-image: url(/images/powerful.jpg);
+        background-size: cover;
+        background-position: 0 30%;
+        height: 5;
+        color: #501B1D;
+    }
+    
+}

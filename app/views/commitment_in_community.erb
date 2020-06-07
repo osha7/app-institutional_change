@@ -4,44 +4,49 @@
 
 </head>
 
-<!-- JUMBOTRON  -->
-    <div class="jumbotron text-left">
-      <div class="container">
-        <br></br>
-        <p class="font-weight-bold">
-        <h1>People</h1>
-        <h1>Committing</h1>
-        <h1>To Change:</h1></p>
-        <br></br>
-        <br></br>
-        <br></br>
-      </div> 
-    </div> 
+<body>
+    <!-- JUMBOTRON  -->
+            <div class="jumbotron text-left">
+            <div class="container">
+                <br></br>
+                <p class="font-weight-bold">
+                <h1><b>People</b></h1>
+                <h1><b>Committing</b></h1>
+                <h1><b>To Change</b></h1></p>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div> 
+            </div> 
 
 
-<div class="container">
-    <center>
-            <% a = User.all %>
-        <h1>-<%= a.length %>-</h1>
-        <h2>Commitments & Counting</h2>
-    </center>
-
-    <br></br>
-
-    <ul>
-        <% @sorted_array = @users.all.sort_by {|user| user.zip_code} %>
-        <% @sorted_array.each do |user| %>
+        <div class="container">
+            <div>
+            <center>
+                    <% a = User.all %>
+                <h1>-<%= a.length %>-</h1>
+                <h2>Commitments & Counting</h2>
+            </center>
+            </div>
             
-            <li> <%= user.first_name %> <%= user.last_initial %>., <%= user.zip_code%></li>
-        
-        <% end %>
-    </ul>
+            <br>
 
+            <div>
+                <ul>
+                    <% @sorted_array = @users.all.sort_by {|user| user.zip_code} %>
+                    <% @sorted_array.each do |user| %>
+                        
+                        <li> <%= user.first_name %> <%= user.last_initial %>., <%= user.zip_code%></li>
+                    
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+                
     
     <br></br>
     <br></br>
     <br></br>
-    <br></br>
-    <br></br>
+    
+</body>
 
-</div>

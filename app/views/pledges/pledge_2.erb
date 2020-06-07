@@ -22,34 +22,36 @@
   </div>
     <div class="card-body">
       <center><h5 class="card-title">Educate Myself</h5></center>
-      <p class="card-text">I pledge to do my own, personal homework from reading articles and books, especially by black authors and leaders, to watching videos and documenteries on the topic of racism.</p>
-      <p>I will seek out local to country-wide organizations that are doing there part to help educate us on the crisis and are actively working towards solutions.</p>
-      <p>I will use my social media accounts to follow accounts of those fighting for the cause and truly listen to what they have to say.</p>
-      <p>We suggest that you cast a wide net.  Look for diversity in your research sources.  Everyone has a perspective.  Try to understand as many different points of view as possible to get a full picture of the racial landscape.</p>
-      </p>
-      <p>We URGE you to research the institutions and organizations that you are already involved with, and clearly understand their attitude and actions towards race. 
-      </p>
-      <p>Please visit our <a href="/resources">"Resources"</a> page if you are looking for a place to start.</p>
+        <p class="card-text">I pledge to do my own, personal homework from reading articles and books, especially by black authors and leaders, to watching videos and documenteries on the topic of racism.*</p>
+        <p>I will seek out local to country-wide organizations that are doing their part to help educate us on the crisis and are actively working towards solutions.</p>
+        <p>I will use my social media accounts to follow accounts of those fighting for the cause and truly listen to what they have to say.</p>
+        <p>I vow to set aside my own previously held beliefs and keep an open mind.</p>
+      
+        <br>
+        
+          <% if current_user.pledges.find_by(checkbox2: "true") %>
+            <div>
+              <center><a href="/users/dashboard" class="btn btn-primary">Dashboard</a></center></button>
+            </div>
 
-      <% if current_user.pledges.find_by(checkbox2: "true") %>
-        <div>
-          <center><a href="/users/dashboard" class="btn btn-primary">Dashboard</a></center></button>
-        </div>
+          <% else %>
+            <div class="form-group form-check">
+              <form action='/pledges/2' method="POST">
+                <input type="checkbox" class="form-check-input" id="checkbox2" name="checkbox2" value="true">
+                <label class="form-check-label" for="checkbox2">By checking this box, you agree to electronically sign this pledge.</label>
+                <center><button type="submit" class="btn btn-primary">Sign Pledge #2</a></center></button>
+              </form>
+            </div>
+            <% end %>
+        <br>
 
-      <% else %>
-        <div class="form-group form-check">
-          <form action='/pledges/2' method="POST">
-            <input type="checkbox" class="form-check-input" id="checkbox2" name="checkbox2" value="true">
-            <label class="form-check-label" for="checkbox2">By checking this box, you agree to electronically sign this pledge.</label>
-            <center><button type="submit" class="btn btn-primary">Sign Pledge #2</a></center></button>
-          </form>
-        </div>
-        <% end %>
+        <p><text style="color:grey;font-size: 10px;">
+        *We suggest that you cast a wide net.  Look for diversity in your research sources.  Everyone has a perspective.  Try to understand as many different points of view as possible to get a full picture of the racial landscape.
+        We URGE you to research the institutions and organizations that you are already involved with, and clearly understand their attitude and actions towards race. 
+       <span><center>Please visit our <a href="/resources">"Resources"</a> page if you are looking for a place to start.</center></span></text></p>
     </div>
 </div>
 
-    <br></br>
-    <br></br>
     <br></br>
     <br></br>
     <br></br>

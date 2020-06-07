@@ -1,27 +1,45 @@
 
-<br></br>
-<div class="container">
-<a href="/posts/new" class="btn btn-primary" style="float:right">Create A New Post</a>
+<head>
+<link rel="stylesheet" href="/stylesheets/posts.css" />
 
-<h1>Posts:</h1>
+</head>
 
-<br>
+<body>
+
+    <!-- JUMBOTRON  -->
+    <div class="jumbotron text-left">
+    <div class="container">
+        <br></br>
+        <p class="font-weight-bold">
+        <h1><b>Community</b></h1>
+        <h1><b>Posts</b></h1></p>
+        <br></br>
+        <br></br>
+        <br></br>
+    </div> 
+    </div> 
+
+    <br>
+    <div class="container">
+    <a href="/posts/new" class="btn btn-primary">Create A New Post</a>
+
+        <div>
+            <br>
+                <ul>
+                    <% @posts.each do |post| %>
+                        <li><a href="<%= "/posts/#{post.id}" %>"><%= post.name %></a></li>
+                    <% end %>
+                </ul>
+        </div>
+
+                
 
 
-    <ul>
-        <% @posts.each do |post| %>
-            <li><a href="<%= "/posts/#{post.id}" %>"><%= post.name %></a></li>
-        <% end %>
-    </ul>
-
-    
+        
+    <br></br>
+    <br></br>
+    <br></br>
 
 
-    
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-
-</div>
+    </div>
+</body>
