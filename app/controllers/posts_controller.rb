@@ -42,10 +42,14 @@ class PostsController < ApplicationController
 
     # show (read)
     get '/posts/:id' do  #:id ==> is the 'slug/wildcard'
+        if !logged_in?
+            redirect to '/login'
+        else
         id = params[:id]
         @post = Post.find_by(id: id)
 
         erb :'/posts/show'
+        end
     end
 
     # edit (read)

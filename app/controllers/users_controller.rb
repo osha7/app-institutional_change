@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     post '/users' do          
       @user = User.create(params)
         if params[:email] == "" || params[:password] == "" || params[:first_name] == "" || params[:last_initial] == "" || params[:zip_code] == ""
-            redirect to '/failure'
+            redirect to '/signup'
         else 
             @user
             session[:user_id] = @user.id
@@ -31,13 +31,13 @@ class UsersController < ApplicationController
     post '/sessions' do
         @user = User.find_by(email: params[:email])
     # binding.pry
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-    # binding.pry
-      redirect to "/users/dashboard"
-    else
-      redirect to "/users/login"
-    end
+        if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+        # binding.pry
+        redirect to "/users/dashboard"
+        else
+        redirect to "/login"
+        end
     end
 
     get '/logout' do
