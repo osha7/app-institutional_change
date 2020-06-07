@@ -10,8 +10,11 @@ class PostsController < ApplicationController
     end
 
     get '/posts/your_posts' do
-
-        erb :'/posts/users_posts'
+        if !logged_in?
+            redirect to '/login'
+        else
+            erb :'/posts/users_posts'
+        end
     end
 
     # new (read)
