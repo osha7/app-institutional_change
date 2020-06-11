@@ -9,10 +9,12 @@ class UsersController < ApplicationController
     # this is post '/signup'
     post '/users' do          
       @user = User.create(params)
-        if params[:email] == "" || params[:password] == "" || params[:first_name] == "" || params[:last_initial] == "" || params[:zip_code] == ""
+        # if params[:email] == "" || params[:password] == "" || params[:first_name] == "" || params[:last_initial] == "" || params[:zip_code] == ""
+        # but bc we validate it in User model:  we use:
+        if !@user.save
             redirect to '/signup'
         else 
-            @user
+            @user.save
             session[:user_id] = @user.id
             redirect to '/login'
         end
