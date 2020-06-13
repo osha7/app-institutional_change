@@ -1,5 +1,19 @@
-<h2> Search Results </h2>
 
-<% @posts.each do |post| %>
-    <%= post.name %>
-    <% end %>
+<br></br>
+<div class="container">
+
+    <h1 style="color:#501B1D;"><b> Search Results </b></h1>
+
+    <% @posts.each.reverse_each do |post| %>
+        <% c = post.created_at %>
+        <li><%= c.strftime("%B %e, %Y") %>
+        <a href="<%= "/posts/#{post.id}" %>"><%= post.name %></a></li>
+        <% end %>
+
+
+<br></br>
+<br></br>
+<br></br>
+
+        
+</div>

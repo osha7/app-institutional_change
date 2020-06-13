@@ -40,7 +40,7 @@ class PostsController < ApplicationController
 ##########################################################################################
     get '/posts/search'  do
         #binding.pry
-        @posts = Post.where("name LIKE '%#{params[:search]}%'")
+        @posts = Post.where("name || content LIKE '%#{params[:search]}%'")
         erb :'/posts/search_results'
     end
     
