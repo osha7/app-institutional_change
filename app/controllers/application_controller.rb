@@ -41,7 +41,16 @@ class ApplicationController < Sinatra::Base
     end
 
     def logged_in?
-      !!session[:user_id]
+      # !!session[:user_id]
+      !!current_user   #micah video
+    end
+
+    def authenticate #micah video
+      redirect '/login' if !logged_in?
+    end
+
+    def authorize(post) #micah video
+      redirect '/login' if post.user != current_user 
     end
     
   end

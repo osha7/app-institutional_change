@@ -6,9 +6,16 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
 </head>
 
+<h1>SignUp</h1>
+<h6>*required</h6><br>
 
-    <h1>SignUp</h1>
-    <h6>*required</h6><br>
+<% if @user && @user.errors.any? %>
+
+    <% @user.errors.full_messages.each do |msg| %>
+        <p style="color:#FF0000";><%= msg %></p>
+    <% end %>
+
+<% end %>
    
     <form action='/users' method="POST">
         <label for="email">*Email:</label> <br>

@@ -1,34 +1,31 @@
 
 class PostsController < ApplicationController
 
-    # index (read)
+    
     get '/posts' do
-        #put all the posts here
+       
         @posts = Post.all
 
         erb :'/posts/index'
     end
 
     get '/posts/your_posts' do
-        if !logged_in?
-            redirect to '/login'
-        else
-            erb :'/posts/users_posts'
-        end
+        authenticate
+       
+        erb :'/posts/users_posts'
     end
 
-    # new (read)
+   
     # more specific so needs to be listed above show
     get '/posts/new' do
-        if !logged_in?
-            redirect to '/login'
-        else
-            erb :'/posts/new'
-        end
+        authenticate
+
+        erb :'/posts/new'
     end
 
-    # create (create)
+  
     post '/posts' do
+        authenticate
         # post = Post.create(name: params[:name], content: params[:content])
         @post = Post.create(  #see posts/new.erb for nested params
         user_id: session[:user_id],
@@ -40,42 +37,79 @@ class PostsController < ApplicationController
         redirect to "/posts/#{@post.id}"
     end
 
-    # show (read)
-    get '/posts/:id' do  #:id ==> is the 'slug/wildcard'
-        if !logged_in?
-            redirect to '/login'
-        else
+##########################################################################################
+    get '/posts/search'  do
+        #binding.pry
+        @posts = Post.where("name LIKE '%#{params[:search]}%'")
+        erb :'/posts/search-results'
+    end
+    
+#     get '/posts/search_results' do
+# binding.pry
+##### With the redirect of a post route, we would lose the params.  The route above, the get method, we have full access to the params still
+#     end
+##########################################################################################
+   
+    get '/posts/:id' do  
+        # if !logged_in?
+        #     redirect to '/login'
+        # else
+        authenticate
         id = params[:id]
         @post = Post.find_by(id: id)
+        
+        #authorize(@post) - can't use this, bc i want all users to have ability to see all posts
 
         erb :'/posts/show'
-        end
+        #end
     end
 
-    # edit (read)
+ 
     get '/posts/:id/edit' do
+
         id = params[:id]
-        @post = Post.find_by(id: id)  #ln 37/38 condense see below - either acceptable
+        @post = Post.find_by(id: id)  
+      
+        # if @post.user_id == current_user.id
+        authorize(@post)
 
         erb :'/posts/edit'
+
+        # else
+        #     redirect to '/posts'
+        # end
+
     end
 
-    # update (update)
-    # put changes all overwrites entire body/ patch only make the specified change requested
-    # must use middleware (Rack::MethodOverride) to send put/patch/delete requests - HTML only recognizes get and post
-    put '/posts/:id' do
+    
+    put '/posts/:id' do   #can be either put or patch
         post = Post.find_by(id: params[:id])
-        post.update(params[:post])
+        #binding.pry
+        authorize(post)
+        # if post.user_id == current_user.id
+            post.update(params[:post])       #ex: if patch: @post.update(content: params[:content])
 
-        redirect to "posts/#{post.id}"
+            redirect to "posts/#{post.id}"  
+
+        # else
+        #     redirect to '/posts'
+
+        # end
+
     end
 
-    # destroy (destroy)
+
     delete '/posts/:id' do
         post = Post.find_by(id: params[:id])
-        post.destroy
+        authorize(post)
+       # if post.user_id == current_user.id
+            post.destroy
 
-        redirect to "/posts"
+            redirect to "/posts/your_posts"
+
+        # else
+        #     redirect to '/posts'
+        # end
     end
 
 end

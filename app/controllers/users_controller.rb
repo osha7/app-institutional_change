@@ -12,7 +12,8 @@ class UsersController < ApplicationController
         # if params[:email] == "" || params[:password] == "" || params[:first_name] == "" || params[:last_initial] == "" || params[:zip_code] == ""
         # but bc we validate it in User model:  we use:
         if !@user.save
-            redirect to '/signup'
+            erb :'/users/signup' # has to be an erb & not a redirect.  If redirect, you lose err messages
+                                ### err messages in view file from Micah's Video
         else 
             @user.save
             session[:user_id] = @user.id
@@ -34,11 +35,12 @@ class UsersController < ApplicationController
         @user = User.find_by(email: params[:email])
     # binding.pry
         if @user && @user.authenticate(params[:password])
-        session[:user_id] = @user.id
+            session[:user_id] = @user.id
         # binding.pry
-        redirect to "/users/dashboard"
+            redirect to "/users/dashboard"
         else
-        redirect to "/login"
+            @err = "Invalid Credentials"   ###error msg - from Micah's Video
+            erb :"/users/login"             #has to be an erb & not a redirect.  If redirect, you lose err messages
         end
     end
 

@@ -8,6 +8,10 @@
     <h1>LogIn</h1>
     <h6>*required</h6><br>
 
+    <% if @err %>
+        <p style="color:#FF0000";><%= @err %></p>
+    <% end %>
+
     <form action='/sessions' method="POST">
 
         <label for="email">*Email:</label><br>
@@ -19,3 +23,5 @@
         <button type="submit" class="btn btn-primary">LogIn</button>
 
     </form>
+    <br>
+    <p>If you haven&#39t already: Please <a href="/signup">SignUp</a>
