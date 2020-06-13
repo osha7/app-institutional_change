@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         else 
             @user.save
             session[:user_id] = @user.id
-            redirect to '/login'
+            redirect to '/users/dashboard'
         end
     end
 

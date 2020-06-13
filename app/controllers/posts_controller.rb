@@ -37,7 +37,7 @@ class PostsController < ApplicationController
         redirect to "/posts/#{@post.id}"
     end
 
-##########################################################################################
+################################ Search Bar ########################################
     get '/posts/search'  do
         #binding.pry
         @posts = Post.where("name || content LIKE '%#{params[:search]}%'")
@@ -46,9 +46,9 @@ class PostsController < ApplicationController
     
 #     get '/posts/search_results' do
 # binding.pry
-##### With the redirect of a post route, we would lose the params.  The route above, the get method, we have full access to the params still
+##### With the redirect of a post route, we would lose the params.  With get route above, we have full access to the params still
 #     end
-##########################################################################################
+####################################################################################
    
     get '/posts/:id' do  
         # if !logged_in?
