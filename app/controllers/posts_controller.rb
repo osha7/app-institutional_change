@@ -9,7 +9,7 @@ class PostsController < ApplicationController
         erb :'/posts/index'
     end
 
-    get '/posts/your_posts' do
+    get '/posts/your-posts' do
         authenticate
        
         erb :'/posts/users_posts'
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
     get '/posts/search'  do
         #binding.pry
         @posts = Post.where("name LIKE '%#{params[:search]}%'")
-        erb :'/posts/search-results'
+        erb :'/posts/search_results'
     end
     
 #     get '/posts/search_results' do
@@ -105,7 +105,7 @@ class PostsController < ApplicationController
        # if post.user_id == current_user.id
             post.destroy
 
-            redirect to "/posts/your_posts"
+            redirect to "/posts/your-posts"
 
         # else
         #     redirect to '/posts'

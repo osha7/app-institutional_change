@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
   
-  get '/commitment_in_community' do
+  get '/commitment-in-community' do
     @users = User.all 
 
     erb :'/commitment_in_community'
@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
     erb :'/resources'
   end
 
-  get '/editors_quarterly' do
+  get '/editors-quarterly' do
 
     erb :'/editors_quarterly'
   end
@@ -42,14 +42,14 @@ class ApplicationController < Sinatra::Base
 
     def logged_in?
       # !!session[:user_id]
-      !!current_user   #micah video
+      !!current_user   #micah's video
     end
 
-    def authenticate #micah video
+    def authenticate #micah's video
       redirect '/login' if !logged_in?
     end
 
-    def authorize(post) #micah video
+    def authorize(post) #micah's video
       redirect '/login' if post.user != current_user 
     end
     
