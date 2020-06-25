@@ -12,6 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'bootstrap', '~> 4.5'
+gem 'rack', '~> 2.2', '>= 2.2.3'
 
 group :test do
   gem 'rspec'
