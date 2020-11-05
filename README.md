@@ -3,7 +3,6 @@
 This app has been developed in direct response to the current events happening in the United States in Spring of 2020.  This is my declaration that Black Lives Matter.  I am hoping that this app will be used for an event in Denver, CO in Summer of 2020 in conjuction with RedLine Contemporary Art Gallerr's Summer Block Party (theme: AFROFUTURISM).  It is our hope that we can use this app as a tool for members of our community who are ready to acknowledge our priveledge as white citizens and to take a stand against racism, in ALL of it's forms.  EQUALITY AND JUSTICE FOR ALL!
 
 Follow along below to clone and run this repo.
-This CLI application will prompt you to make selections to find a restaurant and then read more about that restaurant.  Don't worry if you type in anything in error, the program will let you know if you do, and prompt you for another selection.
 
 
 ****To see more about the premlinary process of my gem from start to finish:****
