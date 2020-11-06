@@ -8,7 +8,7 @@ test:
 
 production:
   adapter: postgresql
-  database: sch_database #rename this to whatever you want
-  username: username
+  database: Institutional_Change_production
+  username: Institutional_Change
   password: password
   host: localhost

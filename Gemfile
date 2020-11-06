@@ -21,9 +21,12 @@ group :test do
   gem 'rack-test'
   # gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end
+# gem 'sqlite3'
+# gem 'pg', :group => :production
+# gem 'sqlite3', '~> 1.3.6' :group => :development
 
 group :development do
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.6' 
 end
 
 group :production do
