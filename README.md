@@ -5,6 +5,7 @@ This app has been developed in direct response to the current events happening i
 Follow along below to clone and run this repo.
 
 
+
 ****To see more about the premlinary process of my gem from start to finish:****
 
 My Trello Project Board:https://trello.com/invite/b/gYOu7X4a/d19c999ff733b3cb31a67f6917b24937/dev-proj-2-crud-mvc
