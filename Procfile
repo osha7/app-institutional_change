@@ -1,1 +1,1 @@
-web: bundle exec rackup config.ru -p $PORT to the Procfile
+worker: bundle exec rackup config.ru -p $PORT to the Procfile
