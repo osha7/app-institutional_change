@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'activerecord', '~> 4.2', '>= 4.2.6', :require => 'active_record'
+gem 'activerecord', '~> 7.0', :require => 'active_record'
 gem 'bcrypt'
 gem "pg", "~> 0.21"
 gem 'rake'
@@ -9,7 +9,7 @@ gem 'shotgun'
 gem 'sinatra'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'thin'
-gem 'bootstrap', '~> 4.5'
+gem 'bootstrap', '~> 5.2'
 # gem 'rack', '~> 2.2', '>= 2.2.3'
 gem 'rack'
 gem 'pry'
